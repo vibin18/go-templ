@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-
 	mux := http.NewServeMux()
+
 	mux.HandleFunc("/", handler.Home)
 
 	err := http.ListenAndServe(":3000", mux)
