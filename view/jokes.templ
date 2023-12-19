@@ -1,0 +1,29 @@
+package view
+
+
+
+templ Base(contents templ.Component){
+    @MyHead(){
+        @contents
+    }
+}
+
+templ Joke(jokes []string) {
+        @Card(jokes)
+}
+
+
+templ Card(jokes []string){
+    <div class="card w-96 bg-neutral text-neutral-content">
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Jokes</h2>
+            <p> { jokes[0] } </p>
+            if len(jokes) > 1 {
+                <p> { jokes[1] } </p>
+            }
+        <div class="card-actions justify-end">
+        </div>
+      </div>
+    </div>
+
+}
